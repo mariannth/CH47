@@ -1,0 +1,33 @@
+    /* Aquí estamos hablando que todo lo del body tiene que tener estos estilos */
+    body {
+
+        /* Aqui */
+        h1 {
+            color: red;
+            /* Aqui va la regla css */
+        }
+
+    }
+
+    .titulos {
+        /* van a tener el siguiente estilo */
+        color: green;
+    }
+
+    .contenidos {
+
+        /* Todo el contenido de contenido tendrán las siguientes reglas de estilo */
+        p {
+            color: yellow;
+        }
+
+        /* Para utilizar un selector identificador usamos # para referirnos a é */
+        #quintoP {
+            color: blue;
+        }
+
+    }
+
+    .miLista {
+        background-color: aquamarine;
+    }
