@@ -18,16 +18,18 @@
 
         /* Todo el contenido de contenido tendrán las siguientes reglas de estilo */
         p {
-            color: yellow;
+            color: palevioletred;
         }
 
         /* Para utilizar un selector identificador usamos # para referirnos a é */
         #quintoP {
             color: blue;
+            
         }
 
     }
 
     .miLista {
-        background-color: aquamarine;
+        background-color: aqua;
+        font-size: 30px;
     }
