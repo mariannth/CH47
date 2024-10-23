@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Compra de flor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="info_compra">
+    <div class="container">
+        <h1>Compra de Imagen</h1>
+        
+        <!-- Contenedor de la imagen -->
+        <div class="image-container">
+            <img src="img/image1.jpg" alt="img1" id="imageToPurchase">
+        </div>
+        
+        <h1 id="Compra">Compra de la flor</h1>
+        <form action="#" method="POST">
+            <label for="name">Nombre Completo:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="address">Dirección de Envío:</label>
+            <textarea id="address" rows="4" required></textarea>
+
+            <label for="imageSelect">Selecciona una flor:</label>
+            <select id="imageSelect" required>
+                <option value="" disabled selected>Elige una flor</option>
+                <option value="img/image1.jpg">Flor 1</option>
+                <option value="img/image2.jpg">flor 2</option>
+                <option value="img/image3.jpg">flor 3</option>
+            </select>
+
+
+            <button type="submit">Comprar flor</button>
+        </form>
+    </div>
+</body>
+
+</html>
