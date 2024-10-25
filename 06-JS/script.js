@@ -41,13 +41,40 @@ if (edad >=18){
     alert(nombre + " tienes " + edad + " años, eres menor, ponte a hacer tu tarea!");
 }
 
+let z = prompt("Piensa en un número");
+let simb = "#";
+let cont = 0;
+
+while(cont < z){
+    document.write(simb);
+    simb = simb + "#";
+    cont = cont + 1;
+};
+
+
 let a = prompt("Piensa en un número");
 let simbolo = "#";
 let contador = 0;
+let resultado = "";
 
-while(contador < a){
-    console.log(simbolo);
-    simbolo = simbolo + "#";
-    contador = contador + 1;
-};
+while (contador < a) {
+    resultado += simbolo + "\n";
+    simbolo += "#";
+    contador++;
+}
 
+alert(resultado);
+
+
+let b = prompt("Piensa en un número");
+let simbolo1 = "#";
+let contador1 = 0;
+let resultado1 = "";
+
+while (contador1 < a) {
+    resultado1 += simbolo1 + "<br>";
+    simbolo1 += "#";
+    contador1++;
+}
+
+document.getElementById("output").innerHTML = resultado1;
