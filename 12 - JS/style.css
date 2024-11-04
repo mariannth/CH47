@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #0c0606;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-contenido {
+    width: 100%;
+    max-width: 450px;
+    background-color: #0c1c3b;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.form-contenido h1 {
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #732424;
+    position: relative;
+}
+
+.datoEntrada {
+    background-color: #728cb5;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: max-height 05s;
+    overflow: hidden;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: none;
+    padding: 18px 15px;
+    color: #0a0202;
+}
+
+input::placeholder {
+    color: #812c2c;
+}
+
+.boton button {
+    flex-basis: 48%;
+    font-size: 16px;
+    background-color: rgb(16, 4, 16);
+    color: rgb(179, 40, 179);
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+}
+
+.boton button.deshabilitar {
+    background-color: rgb(12, 99, 120);
+    color: #06120a
+}
