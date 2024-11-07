@@ -1,0 +1,78 @@
+
+ul{/* Elimina los estilos predeterminados de las listas, 
+    oculta el desbordamiento y establece el color de fondo y el color del texto */
+    list-style: none;
+    overflow: hidden;
+    background-color:rgb(255, 164, 60);
+    color: white;
+
+}
+li{
+    float: left; /* COMANDO PARA PONER EN HORIZONTAL*/
+}
+li{ /* Hace que los elementos <li> sean bloques de nivel de bloque, 
+    centrados, con padding automático y sin subrayado */
+    display: block;
+    text-align: center;
+    padding: auto;
+    text-decoration: none;
+
+}
+li a{/* Estiliza los enlaces dentro de <li> para que se muestren como bloques, 
+    sean blancos, centrados, con padding y sin subrayado */
+    display: block;
+    color: white; /* CAMBIO COLOR LETRA*/
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+/* Cambia el color de fondo y del texto al pasar el cursor sobre los enlaces */
+li a:hover{/* El color-scheme no está definido aquí, 
+    pero se usa para esquemas de color como normal, light, dark, etc. */
+
+    background-color: white;
+    color:orange}
+    .container{
+        display: flex;
+        .itemText{
+            flex-grow: 2; 
+        }
+  .itemVacio{
+            flex-grow: 2;
+        }
+  .itemImg{
+             flex-grow: 6;
+    }
+    }
+    .container2{
+        display: flex ;
+        align-items: center;
+    padding: 30px;}
+    h2 {
+        margin-bottom: 20px;
+        color: rgb(255, 140, 32);}
+    .containerform{
+        padding: 80px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px hsla(27, 100%, 55%, 0.932);
+    width: 100%;
+    max-width: 500px
+    }
+    form {
+        display: flexbox;
+        flex-direction: column;
+    }
+    
+    
+    label {
+        margin-bottom: 200px; /*ajustar el margen*/
+        color: #f76f14;
+    }
+    input, textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ffa774;
+        border-radius: 10px;
+        font-size: 16px;
+    }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Estilo de párrafo JS DOM</title>
+    <style>
+        #text {
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">Ejercicios de JavaScript #1</p>
+    <div>
+        <button id="jsstyle" onclick="js_style()">Estilo</button>
+    </div>
+    <p>-------------------------------------</p>
+
+    <form id="form1" onsubmit="getFormvalue(); return false;">
+        Nombre: <input type="text" name="fname" value="David"><br>
+        Apellido: <input type="text" name="lname" value="Beckham"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p>-------------------------------------</p>
+
+    <a href="#link1">Link 1</a>
+    <a href="#link2">Link 2</a>
+    <a href="#link3">Link 3</a>
+    <button onclick="showLinksInfo()">Mostrar enlaces</button>
+
+    <p>-------------------------------------</p>
+    <div class="header"></div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
