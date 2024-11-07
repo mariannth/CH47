@@ -131,3 +131,32 @@ async function fetchPokemons() {
 
 // Llama a la función para cargar los Pokémon al iniciar el script
 fetchPokemons();
+
+
+const url1 = "https://pokeapi.co/api/v2/pokemon/pikachu";
+
+console.log("antes del fetch");
+
+fetch(url1, {
+    method: 'GET'
+})
+.then((response) => {
+    // Convierte la respuesta a JSON
+    return response.json();
+})
+.then((data) => {
+    // Accede al nombre del Pokémon
+    console.log(data.name);
+})
+.catch((error) => {
+    console.error("Ups, algo salió mal", error);
+});
+
+console.log("después del fetch");
+
+
+//TAREA: Metodo post, para hacer algo, esto debe ser: un body con tu nombre y team_name
+//Body:  {
+//   nombre: "liliana",
+//   teamName: "chicatana"
+// }
