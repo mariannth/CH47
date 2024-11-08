@@ -86,85 +86,157 @@
 
 //LAMANDO MUCHOS POKEMONES
 // URL de la API de Pokémon con un límite de 9 resultados para esta demostración
-const url = "https://pokeapi.co/api/v2/pokemon?limit=54"; 
+// const url = "https://pokeapi.co/api/v2/pokemon?limit=54"; 
 
-// Función asíncrona para obtener la información de cada Pokémon
-async function fetchPokemons() {
-  try {
-    // Realiza una solicitud a la API de Pokémon y espera la respuesta
-    const response = await fetch(url);
-    // Convierte la respuesta a JSON para obtener los datos
-    const data = await response.json();
-    // Selecciona el contenedor HTML donde se insertarán las cards de los Pokémon
-    console.log(data.results);
-    const pokemonContainer = document.getElementById("pokemon-container");
+// // Función asíncrona para obtener la información de cada Pokémon
+// async function fetchPokemons() {
+//   try {
+//     // Realiza una solicitud a la API de Pokémon y espera la respuesta
+//     const response = await fetch(url);
+//     // Convierte la respuesta a JSON para obtener los datos
+//     const data = await response.json();
+//     // Selecciona el contenedor HTML donde se insertarán las cards de los Pokémon
+//     console.log(data.results);
+//     const pokemonContainer = document.getElementById("pokemon-container");
     
-    // Itera sobre cada resultado en la lista de Pokémon obtenida
-    for (const pokemon of data.results) {
-      // Realiza una solicitud para obtener la información específica de cada Pokémon
-      const pokemonData = await fetch(pokemon.url);
-      // Convierte la respuesta a JSON para acceder a los detalles del Pokémon
-      const pokemonInfo = await pokemonData.json();
+//     // Itera sobre cada resultado en la lista de Pokémon obtenida
+//     for (const pokemon of data.results) {
+//       // Realiza una solicitud para obtener la información específica de cada Pokémon
+//       const pokemonData = await fetch(pokemon.url);
+//       // Convierte la respuesta a JSON para acceder a los detalles del Pokémon
+//       const pokemonInfo = await pokemonData.json();
 
-      // Crea un elemento <div> que servirá como la estructura de la card de Bootstrap
-      const pokemonCard = document.createElement("div");
-      // Añade la clase de Bootstrap para hacer que la card ocupe una columna
-      pokemonCard.classList.add("col");
+//       // Crea un elemento <div> que servirá como la estructura de la card de Bootstrap
+//       const pokemonCard = document.createElement("div");
+//       // Añade la clase de Bootstrap para hacer que la card ocupe una columna
+//       pokemonCard.classList.add("col");
 
-      // Inserta el contenido HTML de la card, incluyendo la imagen y el nombre del Pokémon
-      pokemonCard.innerHTML = `
-        <div class="card h-100 text-center">  <!-- Card de Bootstrap con altura completa y texto centrado -->
-          <img src="${pokemonInfo.sprites.front_default}" class="card-img-top" alt="${pokemonInfo.name}"> <!-- Imagen del Pokémon -->
-          <div class="card-body">  <!-- Cuerpo de la card -->
-            <h5 class="card-title text-capitalize">${pokemonInfo.name}</h5> <!-- Nombre del Pokémon con estilo capitalizado -->
-          </div>
-        </div>
-      `;
-      // Añade la card creada al contenedor de Pokémon en el HTML
-      pokemonContainer.appendChild(pokemonCard);
-    }
-  } catch (error) { // Captura cualquier error que ocurra durante el proceso de fetch
-    // Muestra un mensaje de error en la consola en caso de que algo falle
-    console.error("Error fetching Pokémon data:", error);
-  }
-}
+//       // Inserta el contenido HTML de la card, incluyendo la imagen y el nombre del Pokémon
+//       pokemonCard.innerHTML = `
+//         <div class="card h-100 text-center">  <!-- Card de Bootstrap con altura completa y texto centrado -->
+//           <img src="${pokemonInfo.sprites.front_default}" class="card-img-top" alt="${pokemonInfo.name}"> <!-- Imagen del Pokémon -->
+//           <div class="card-body">  <!-- Cuerpo de la card -->
+//             <h5 class="card-title text-capitalize">${pokemonInfo.name}</h5> <!-- Nombre del Pokémon con estilo capitalizado -->
+//           </div>
+//         </div>
+//       `;
+//       // Añade la card creada al contenedor de Pokémon en el HTML
+//       pokemonContainer.appendChild(pokemonCard);
+//     }
+//   } catch (error) { // Captura cualquier error que ocurra durante el proceso de fetch
+//     // Muestra un mensaje de error en la consola en caso de que algo falle
+//     console.error("Error fetching Pokémon data:", error);
+//   }
+// }
 
-// Llama a la función para cargar los Pokémon al iniciar el script
-fetchPokemons();
+// // Llama a la función para cargar los Pokémon al iniciar el script
+// fetchPokemons();
 
+// //OTRA FORMA DE LLAMAR A PIKACHU
+// const url1 = "https://pokeapi.co/api/v2/pokemon/pikachu";
 
-const url1 = "https://pokeapi.co/api/v2/pokemon/pikachu";
+// console.log("antes del fetch");
 
-console.log("antes del fetch");
+// fetch(url1, {
+//     method: 'GET'
+// })
+// .then((response) => { //recibe la respuesta
+//     // Convierte la respuesta a JSON
+//     return response.json();
+// })
+// .then((data) => { //trabaja con la data de la respuesta
+//     // Accede al nombre del Pokémon
+//     console.log(data.name);
+//      localStorage.setItem("nombrePokemon", data.name);
+//     //localStorage.removeItem("nombrePokemon");
+// })
+// .catch((error) => {
+//     console.error("Ups, algo salió mal", error);
+// });
 
-fetch(url1, {
-    method: 'GET'
-})
-.then((response) => { //recibe la respuesta
-    // Convierte la respuesta a JSON
-    return response.json();
-})
-.then((data) => { //trabaja con la data de la respuesta
-    // Accede al nombre del Pokémon
-    console.log(data.name);
-     localStorage.setItem("nombrePokemon", data.name);
-    //localStorage.removeItem("nombrePokemon");
-})
-.catch((error) => {
-    console.error("Ups, algo salió mal", error);
-});
+// console.log("después del fetch");
 
-console.log("después del fetch");
+// function peleaPokemon() {
+//   const miPrimerPokemon = localStorage.getItem("nombrePokemon");
+//   console.log("primerContrincante: " + miPrimerPokemon);
+// }
 
-function peleaPokemon() {
-  const miPrimerPokemon = localStorage.getItem("nombrePokemon");
-  console.log("primerContrincante: " + miPrimerPokemon);
-}
-
-peleaPokemon();
+// peleaPokemon();
 //TAREA: Metodo post, para hacer algo, esto debe ser: un body con tu nombre y team_name
 //Body:  {
 //   nombre: "liliana",
 //   teamName: "chicatana"
 // }
 
+// ------------------------------------------------
+//TAERA
+const url = 'https://pokeapi.co/api/v2/';
+
+// Función para obtener datos del Pokémon
+const fetchPokemon = async (pokemon) => {
+    try {
+        const response = await fetch(`${url}pokemon/${pokemon}`);
+        const parsedResponse = await response.json();
+        return parsedResponse;
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+// Función para mostrar la tarjeta del Pokémon en el DOM
+const displayPokemonCard = (pokemon) => {
+    const cardContainer = document.querySelector('.card--container');
+    cardContainer.innerHTML = `
+        <div class="card text-center">
+            <img src="${pokemon.sprites.front_default}" class="card-img-top" alt="${pokemon.name}">
+            <div class="card-body">
+                <h5 class="card-title text-capitalize">${pokemon.name}</h5>
+                <p>ID: ${pokemon.id}</p>
+                <p>Peso: ${pokemon.weight / 10} kg</p>
+            </div>
+        </div>
+    `;
+};
+
+// Obtener Pokémon inicial al cargar la página
+document.addEventListener('DOMContentLoaded', async () => {
+    const storedId = localStorage.getItem('currentPokeId');
+    const initialId = storedId ? parseInt(storedId) : 1;
+    const pokemon = await fetchPokemon(initialId);
+    if (pokemon) {
+        localStorage.setItem('currentPokeId', pokemon.id);
+        displayPokemonCard(pokemon);
+    }
+});
+
+// Obtener Pokémon por nombre o ID cuando se presiona el botón "Get Pokémon"
+document.getElementById('get-btn').addEventListener('click', async () => {
+    const text = document.getElementById('poke-name').value.toLowerCase();
+    const pokemon = await fetchPokemon(text);
+    if (pokemon) {
+        localStorage.setItem('currentPokeId', pokemon.id);
+        displayPokemonCard(pokemon);
+    }
+});
+
+// Obtener Pokémon anterior
+document.getElementById('previous-btn').addEventListener('click', async () => {
+    const currentPokeId = parseInt(localStorage.getItem('currentPokeId'));
+    const newId = Math.max(1, currentPokeId - 1);
+    const pokemon = await fetchPokemon(newId);
+    if (pokemon) {
+        localStorage.setItem('currentPokeId', pokemon.id);
+        displayPokemonCard(pokemon);
+    }
+});
+
+// Obtener Pokémon siguiente
+document.getElementById('next-btn').addEventListener('click', async () => {
+    const currentPokeId = parseInt(localStorage.getItem('currentPokeId'));
+    const newId = currentPokeId + 1;
+    const pokemon = await fetchPokemon(newId);
+    if (pokemon) {
+        localStorage.setItem('currentPokeId', pokemon.id);
+        displayPokemonCard(pokemon);
+    }
+});
