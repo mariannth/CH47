@@ -40,13 +40,28 @@ Javascript Object Notation (JSON) es un formato de datos para enviar y manejar d
 
 class ch47 {
   //Clase padre o principal
-  constructor(nombre, apellido, email, edad) {
+  constructor(nombre, apellido, email, edad, genero) {
     //nos permite crear el objeto
     this.name = nombre;
     this.lastName = apellido;
     this.email = email;
     this.age = edad;
-    this.info = `Holi, soy ${this.name} ${this.lastName}, mi correo es ${this.email} y tengo ${this.age} años.`;
+    this._genero = genero; //el uso de _ para denotar un atributo "privado"
+    this.info = `Holi, soy ${this.name} ${this.lastName}, mi correo es ${this.email}, tengo ${this.age} años y mi genero es ${this._genero}.`;
+  }
+
+  // Método getter para obtener la edad
+  get genero() {
+    return this._genero;
+  }
+
+  // Método setter para establecer la edad
+  set genero(nuevoGenero) {
+    if (nuevoGenero === "masculino" || nuevoGenero === "femenino") {
+      this._genero = nuevoGenero;
+    } else {
+      console.log("El genero solo puede ser masculino o femenino.");
+    }
   }
 
   infoIntegrantes() {
@@ -89,6 +104,23 @@ class participante extends ch47 {
 }
 
 //METODOS ACCESORES  ###TAREA###
+/*Los métodos accesores en programación orientada a objetos (POO) permiten controlar cómo se accede y modifica el valor de los atributos de un objeto. Estos métodos son los getters y setters, y sirven para proteger y controlar los valores de los atributos, especialmente cuando quieres asegurarte de que cumplan con ciertas condiciones antes de asignarlos o al momento de leerlos.
+
+¿Qué son los Métodos Accesores?
+Getter (get): Es un método accesor que permite acceder al valor de un atributo privado de una clase sin modificarlo. Lo usamos para "leer" el valor de un atributo desde fuera de la clase.
+
+Setter (set): Es un método accesor que permite modificar el valor de un atributo privado de una clase de forma controlada. Lo usamos para "establecer" el valor de un atributo desde fuera de la clase, y podemos agregar validaciones para asegurar que solo se acepten ciertos valores.*/
+console.log("----Ahora voy a llamar a la clase ch47 con metodos accesores----");
+
+const ch = new ch47("Mariana", "Torres", "mariana@example.com", 26, "Femenino");
+ch.infoIntegrantes();
+console.log(ch.genero);
+ch.genero = "masculino";
+console.log(ch.genero);
+ch.genero = "X";
+console.log(ch.genero);
+
+
 
 
 //------------------------------------------------------
