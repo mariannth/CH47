@@ -1,0 +1,25 @@
+[
+    {
+        "nombre": "Javier",
+        "apellido": "Hernandez",
+        "email": "XqgYz@example.com",
+        "password": "123456",
+        "edad": 25,
+        "hobbies": [
+            "Jugar",
+            "Programar",
+            "Caminar"
+        ]
+    },
+    {
+        "nombre": "Pablo",
+        "apellido": "Fernandez",
+        "email": "b6Sf1@example.com",
+        "password": "87654321",
+        "edad": 28,
+        "hobbies": [
+            "Leer",
+            "Caminar"
+        ]
+    }
+]

@@ -20,7 +20,8 @@
 Modularidad: Permite dividir un programa en modulos, es decir, funciones, clases, etc. Esto es para que el programa sea mas facil de entender y mantener. Se usa la palabra reservada import para hacerlo.
 
 Metodos estáticos: Utiliza la palabra reservada static para hacerlo, nos permite acceder a ellos sin necesidad de instanciar la clase.
-Metodos accesores: Utiliza la palabra reservada get y set para hacerlo, nos permite acceder a ellos sin necesidad de instanciar la clase.
+
+-Metodos accesores: Utiliza la palabra reservada get y set para hacerlo, nos permite acceder a ellos sin necesidad de instanciar la clase.
 
 Principios SOLID: 
 -S: Single Responsibility Principle: Se refiere a que una clase debe tener una sola responsabilidad y debe ser única, la responsabilidad de un objeto debe ser limitada a una sola tarea y no debe tener dependencias de otros objetos.
@@ -59,7 +60,7 @@ class instruccion extends ch47 {
     this.grado = escolaridad;
     this.info = `Holi, soy ${this.name} ${this.lastName}, mi correo es ${this.email} y tengo ${this.age} años. Mi escolaridad es ${this.grado}.`;
   }
-  static darSesion(){
+  static darSesion() {
     console.log("Hoy no tienes sesion");
   }
 }
@@ -71,10 +72,24 @@ class mentoria extends ch47 {
     this.info = `Holi, soy ${this.name} ${this.lastName}, mi correo es ${this.email} y tengo ${this.age} años. Mi telefono es ${this.numTel}.`;
   }
 
-  static darMentoria(){
+  static darMentoria() {
     console.log("Tienes muchxs mentees");
   }
 }
+
+class participante extends ch47 {
+  constructor(nombre, apellido, email, edad, municipio) {
+    super(nombre, apellido, email, edad);
+    this.municipio = municipio;
+    this.info = `Holi, soy ${this.name} ${this.lastName}, mi correo es ${this.email} y tengo ${this.age} años. Mi municipio es ${this.municipio}.`;
+  }
+  static soyParticipante() {
+    console.log("Soy parte de Generation");
+  }
+}
+
+//METODOS ACCESORES  ###TAREA###
+
 
 //------------------------------------------------------
 console.log("----Ahora voy a llamar a la clase ch47----");
@@ -82,11 +97,35 @@ const ch1 = new ch47("Mariana", "Torres", "mariana@example.com", 26); //los obbj
 ch1.infoIntegrantes();
 
 console.log("----Ahora voy a llamar a la clase instruccion----");
-const ch2 = new instruccion("Mariana", "Torres", "mariana@example.com", 26, "Ingenieria en Sistemas");
+const ch2 = new instruccion(
+  "Mariana",
+  "Torres",
+  "mariana@example.com",
+  26,
+  "Ingenieria en Sistemas"
+);
 ch2.infoIntegrantes();
 instruccion.darSesion();
 
 console.log("----Ahora voy a llamar a la clase mentoria----");
-const ment = new mentoria("Mariana", "Torres", "mariana@example.com", 26, 123456789);
+const ment = new mentoria(
+  "Mariana",
+  "Torres",
+  "mariana@example.com",
+  26,
+  123456789
+);
 ment.infoIntegrantes();
 mentoria.darMentoria();
+
+console.log("----Ahora voy a llamar a la clase participante----");
+const part = new participante(
+  "Mariana",
+  "Torres",
+  "mariana@example.com",
+  26,
+  "Pachuca"
+);
+part.infoIntegrantes();
+participante.soyParticipante();
+

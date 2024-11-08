@@ -140,13 +140,15 @@ console.log("antes del fetch");
 fetch(url1, {
     method: 'GET'
 })
-.then((response) => {
+.then((response) => { //recibe la respuesta
     // Convierte la respuesta a JSON
     return response.json();
 })
-.then((data) => {
+.then((data) => { //trabaja con la data de la respuesta
     // Accede al nombre del Pokémon
     console.log(data.name);
+     localStorage.setItem("nombrePokemon", data.name);
+    //localStorage.removeItem("nombrePokemon");
 })
 .catch((error) => {
     console.error("Ups, algo salió mal", error);
@@ -154,9 +156,15 @@ fetch(url1, {
 
 console.log("después del fetch");
 
+function peleaPokemon() {
+  const miPrimerPokemon = localStorage.getItem("nombrePokemon");
+  console.log("primerContrincante: " + miPrimerPokemon);
+}
 
+peleaPokemon();
 //TAREA: Metodo post, para hacer algo, esto debe ser: un body con tu nombre y team_name
 //Body:  {
 //   nombre: "liliana",
 //   teamName: "chicatana"
 // }
+
