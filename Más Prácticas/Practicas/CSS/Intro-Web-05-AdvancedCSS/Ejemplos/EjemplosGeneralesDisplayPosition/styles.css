@@ -1,0 +1,78 @@
+
+header,
+nav,
+section {
+  display: block;
+  border: 1px solid #000;
+  margin: 10px 0;
+  padding: 10px;
+}
+a {
+  display: inline;
+  margin-right: 10px;
+  text-decoration: none;
+  color: blue;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px;
+ 
+}
+.ExampleOne{
+  column-span: 3;
+}
+
+.grid-item {
+  border: 1px solid #000;
+  padding: 20px;
+  text-align: center;
+}
+.barra-lateral {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 150px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.alerta {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #dc3545;
+  color: white;
+  padding: 15px;
+}
+
+.principal{
+   padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.menu{
+    width: 20%;
+    float: left;
+}
+
+.left, .right {
+    float: left;
+    width: 20%; /* The width is 20%, by default */
+  }
+  
+  .main {
+    float: left;
+    width: 60%; /* The width is 60%, by default */
+  }
+
+  @media screen and (max-width:800px) {
+    .grid-container{
+      width:100%;
+    }
+  }
+  @media screen and (max-width:800px) {
+    .left , .main, .right {width:100%;}
+  }

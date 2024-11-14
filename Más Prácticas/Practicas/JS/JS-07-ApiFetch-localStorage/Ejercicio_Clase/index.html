@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Cards</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <!-- Botón para incrementar contador -->
+    <button id='btn-counter'>Counter ++</button>
+    <p id='counter'></p>
+
+    <div class='container'>
+        <!-- Contenedor para la tarjeta del Pokémon -->
+        <div class='card--container'></div>
+
+        <!-- Controles de búsqueda y navegación -->
+        <div class="container row">
+            <label for="poke-name">Buscar Pokémon (Nombre / ID)</label>
+            <input id='poke-name' type="text" name="poke-name" placeholder="Ejemplo: pikachu o 25">
+        </div>
+        
+        <div class='container row'>
+            <button id='previous-btn' class='btn primary'>Anterior</button> 
+            <button id='get-btn' class='btn primary'>Buscar Pokémon</button> 
+            <button id='next-btn' class='btn primary'>Siguiente</button> 
+        </div>
+    </div>
+    <script src='script.js'></script>
+</body>
+</html>

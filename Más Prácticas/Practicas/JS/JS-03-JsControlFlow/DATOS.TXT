@@ -1,0 +1,22 @@
+
+//let resultado;
+
+switch (operacion) {
+    case '+':
+        resultado = numero1 + numero2;
+        break;
+    case '-':
+        resultado = numero1 - numero2;
+        break;
+    case '*':
+        resultado = numero1 * numero2;
+        break;
+    case '/':
+        resultado = numero2 !== 0 ? numero1 / numero2 : "Error: No se puede dividir por cero";
+        break;
+    default:
+        resultado = "Operación no válida";
+}
+
+document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
+}
