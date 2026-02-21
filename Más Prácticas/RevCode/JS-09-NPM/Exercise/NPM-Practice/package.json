@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/generation-org/NPM-Practice#readme",
   "dependencies": {
-    "axios": "^0.19.2"
+   
   },
   "devDependencies": {
     "jest": "^29.7.0"
